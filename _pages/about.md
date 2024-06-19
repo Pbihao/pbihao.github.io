@@ -30,7 +30,7 @@ Publications
 
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
   <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0;">
-    <img src="files/publications/images/2024ICLR_SLM.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
+    <img src="files/publications/images/2024ICLR_SLM.jpg" style="display: block; width: 90%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
     <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
