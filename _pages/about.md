@@ -25,6 +25,8 @@ Selected Awards
 * <p style="display: flex; justify-content: space-between;font-size: 18px;"><span>CCPC, China Collegiate Programming Contest: <strong>Gold Medal</strong></span><span style="margin-left: auto;">2021</span></p> 
 * <p style="display: flex; justify-content: space-between;font-size: 18px;"><span>CCPC, China Collegiate Programming Contest: <strong>Silver Medal</strong></span><span style="margin-left: auto;">2020</span></p> 
 
+> All as team leader and contributing first.
+
 Publications
 ======
 
