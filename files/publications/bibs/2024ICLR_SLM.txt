@@ -1,0 +1,6 @@
+@article{peng2024scalable,
+  title={Scalable language model with generalized continual learning},
+  author={Peng, Bohao and Tian, Zhuotao and Liu, Shu and Yang, Mingchang and Jia, Jiaya},
+  journal={arXiv preprint arXiv:2404.07470},
+  year={2024}
+}
