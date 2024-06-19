@@ -73,6 +73,32 @@ Publications
   </div>
 </div>
 
+
+<!-- Prompt Highliter -->
+<div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
+        <img src="files/publications/images/2024CVPR_PromptHilighter.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
+        <a href="https://arxiv.org/abs/2312.04302" style="text-decoration: none;">Prompt Highlighter: Interactive Control for Multi-Modal LLMs
+      </a><br>
+      <small>
+        Yuechen Zhang, Shengju Qian, <strong>Bohao Peng</strong>, Shu Liu, Jiaya Jia
+      </small><br>
+      <small><em>
+        Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2024
+      </em></small><br>
+      <small>
+        [<a href="https://arxiv.org/abs/2312.04302">Paper</a>] 
+        [<a href="https://julianjuaner.github.io/projects/PromptHighlighter">Code</a>] 
+        [<a href="files/publications/bibs/2024CVPR_PromptHilighter.txt">Bib</a>]
+      </small>
+    </p>
+  </div>
+</div>
+
+
 <!-- GroupContrast -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
   <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
@@ -98,7 +124,7 @@ Publications
 </div>
 
 
-<!-- HDNET -->
+<!-- HDMNET -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
   <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
     <img src="files/publications/images/2023CVPR_HDMNet.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">

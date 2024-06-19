@@ -1,0 +1,7 @@
+@inproceedings{zhang2024prompt,
+  title={Prompt Highlighter: Interactive Control for Multi-Modal LLMs},
+  author={Zhang, Yuechen and Qian, Shengju and Peng, Bohao and Liu, Shu and Jia, Jiaya},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={13215--13224},
+  year={2024}
+}
