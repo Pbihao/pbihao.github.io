@@ -1,0 +1,7 @@
+@inproceedings{peng2023hierarchical,
+  title={Hierarchical dense correlation distillation for few-shot segmentation},
+  author={Peng, Bohao and Tian, Zhuotao and Wu, Xiaoyang and Wang, Chengyao and Liu, Shu and Su, Jingyong and Jia, Jiaya},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={23641--23651},
+  year={2023}
+}

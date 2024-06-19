@@ -25,6 +25,25 @@ Selected Awards
 * <p style="display: flex; justify-content: space-between;font-size: 18px;"><span>CCPC, China Collegiate Programming Contest: <strong>Gold Medal</strong></span><span style="margin-left: auto;">2021</span></p> 
 * <p style="display: flex; justify-content: space-between;font-size: 18px;"><span>CCPC, China Collegiate Programming Contest: <strong>Silver Medal</strong></span><span style="margin-left: auto;">2020</span></p> 
 
+Publications
+======
+
+
+
+
+<div style="display: flex; align-items: center; margin: 30px;">
+  <div style="flex: 0 0 20%; margin-right: 20px;">
+    <img src="_publications/images/2023CVPR_HDMNet.jpg" style="width: 100%; aspect-ratio: 1.5 / 1; object-fit: cover;" alt="hdnet">
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="line-height: 1.5; font-size: 1.1em; margin: 0;">
+      <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Peng_Hierarchical_Dense_Correlation_Distillation_for_Few-Shot_Segmentation_CVPR_2023_paper.pdf" style="font-size: 1.2em;">Hierarchical dense correlation distillation for few-shot segmentation</a><br>
+      <small><strong>Bohao Peng</strong>, Zhuotao Tian, Xiaoyang Wu, Chengyao Wang, Shu Liu, Jingyong Su, Jiaya Jia</small><br>
+      <small><em>Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2023 <br> <strong><span style="color: red;">Highlight</span></strong> (2.4% acceptance rate)</em></small><br>
+      <small>[<a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Peng_Hierarchical_Dense_Correlation_Distillation_for_Few-Shot_Segmentation_CVPR_2023_paper.pdf">Paper</a>] [<a href="https://github.com/Pbihao/HDMNet">Code</a>] [<a href="_publications/bibs/2023CVPR_HDMNet.txt">Bib</a>]</small>
+    </p>
+  </div>
+</div>
 
 
 
@@ -70,3 +89,5 @@ Example: editing a markdown file for a talk
 For more info
 ------
 More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
+
+
