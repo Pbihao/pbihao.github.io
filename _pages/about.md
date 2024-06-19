@@ -8,10 +8,50 @@ redirect_from:
 ---
 
 Biography
-=====
+======
+Hi! I am Bohao Peng. Thank you for visiting my personal website.
+
 I am a second-year Ph.D student from the Department of Computer Science and Engineering, the Chinese University of Hong Kong (CUHK), supervised by Dr. [Jiaya Jia](https://jiaya.me/home) and Dr. [Ming-Chang Yang](https://www.cse.cuhk.edu.hk/~mcyang/). Before that, I obtained my Bachelor of Computer Science from Harbin Institute of Technology, Shenzhen (HITsz), supervised by Dr. [Jingyong Su](https://faculty.hitsz.edu.cn/sujingyong).
 
+My recent research interest is in controllable generation. Additionally, I have worked on several projects involving image segmentation.
 
+
+Selected Awards
+======
+* <p style="display: flex; justify-content: space-between;font-size: 18px;">
+  <span><strong>National Scholarship </strong></span>
+  <span style="margin-left: auto;">2019</span>
+</p>
+
+* <p style="display: flex; justify-content: space-between;font-size: 18px;">
+  <span>ACM-ICPC, International Collegiate Programming Contest, regional: <strong>Gold Medal</strong></span>
+  <span style="margin-left: auto;">2020</span>
+</p> 
+
+* <p style="display: flex; justify-content: space-between;font-size: 18px;">
+  <span>ACM-ICPC, International Collegiate Programming Contest, regional: <strong>Gold Medal</strong></span>
+  <span style="margin-left: auto;">2021</span>
+</p> 
+
+* <p style="display: flex; justify-content: space-between;font-size: 18px;">
+  <span>ACM-ICPC, International Collegiate Programming Contest, regional: <strong>Silver Medal</strong></span>
+  <span style="margin-left: auto;">2020</span>
+</p> 
+
+* <p style="display: flex; justify-content: space-between;font-size: 18px;">
+  <span>CCPC, China Collegiate Programming Contest: <strong>Gold Medal</strong></span>
+  <span style="margin-left: auto;">2021</span>
+</p> 
+
+* <p style="display: flex; justify-content: space-between;font-size: 18px;">
+  <span>CCPC, China Collegiate Programming Contest: <strong>Silver Medal</strong></span>
+  <span style="margin-left: auto;">2020</span>
+</p> 
+
+
+
+
+<!-- 
 
 This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
 
@@ -52,4 +92,4 @@ Example: editing a markdown file for a talk
 
 For more info
 ------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
