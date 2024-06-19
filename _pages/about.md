@@ -29,7 +29,7 @@ Publications
 ======
 
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
     <img src="files/publications/images/2024ICLR_SLM.jpg" style="display: block; width: 90%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -43,7 +43,21 @@ Publications
 </div>
 
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
+    <img src="files/publications/images/2024CVPR_PPT.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
+      <a href="https://arxiv.org/pdf/2308.09718.pdf" style="text-decoration: none;">Towards Large-scale 3D Representation Learning with Multi-dataset Point Prompt Training</a><br>
+      <small>Xiaoyang Wu, Zhuotao Tian, Xin Wen, <strong>Bohao Peng</strong>, Xihui Liu, Kaicheng Yu, Hengshuang Zhao</small><br>
+      <small><em>Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2024</em></small><br>
+      <small>[<a href="https://arxiv.org/pdf/2308.09718.pdf">Paper</a>] [<a href="https://github.com/Pointcept/PointTransformerV3">Code</a>] [<a href="files/publications/bibs/2024CVPR_PPT.txt">Bib</a>]</small>
+    </p>
+  </div>
+</div>
+
+<div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
     <img src="files/publications/images/2024CVPR_OACNN.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -58,7 +72,7 @@ Publications
 
 
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
     <img src="files/publications/images/2023CVPR_HDMNet.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
