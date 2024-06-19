@@ -13,7 +13,7 @@ Hi! I am Bohao Peng. Thank you for visiting my personal website.
 
 I am a second-year Ph.D student from the Department of Computer Science and Engineering, the Chinese University of Hong Kong (CUHK), supervised by Dr. [Jiaya Jia](https://jiaya.me/home) and Dr. [Ming-Chang Yang](https://www.cse.cuhk.edu.hk/~mcyang/). I obtained my Bachelor of Computer Science from Harbin Institute of Technology, Shenzhen (HITsz), supervised by Dr. [Jingyong Su](https://faculty.hitsz.edu.cn/sujingyong).
 
-Before that, I widely participate in various programming contests. I have won gold and silver medals multiple times in contests such as [ICPC](https://icpc.global/) and [CCPC](https://ccpc.io/), and contributed to supporting these contests as both the technical director and a volunteer.
+Before that, I widely participate in various programming contests, such as [ICPC](https://icpc.global/) and [CCPC](https://ccpc.io/), and contributed to supporting these contests as both the technical director and a volunteer.
 
 My recent research interest is in controllable generation. Additionally, I have worked on several projects involving image segmentation.
 
