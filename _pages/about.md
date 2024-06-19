@@ -128,6 +128,30 @@ Publications
 </div>
 
 
+<!-- LISA++ -->
+<div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
+        <img src="files/publications/images/2024Arxiv_LISA++.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
+        <a href="https://arxiv.org/abs/2312.17240" style="text-decoration: none;">LISA++: An Improved Baseline for Reasoning Segmentation with Large Language Model
+      </a><br>
+      <small>
+        Senqiao Yang, Tianyuan Qu, Xin Lai, Zhuotao Tian, <strong>Bohao Peng</strong>, Shu Liu, Jiaya Jia
+      </small><br>
+      <small><em>
+        Arxiv preprint, 2024
+      </em></small><br>
+      <small>
+        [<a href="https://arxiv.org/abs/2312.17240">Paper</a>] 
+        [<a href="files/publications/bibs/2024Arxiv_LISA++.txt">Bib</a>]
+      </small>
+    </p>
+  </div>
+</div>
+
+
 <!-- HDMNET -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
   <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
