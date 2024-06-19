@@ -150,6 +150,6 @@ Publications
 
 Experiences
 ======
-* <div ><h3>ACM-ICPC, International Collegiate Programming Contest</h3><p><strong>Technical Director</strong></p><p><em>Hong Kong, 2022</em></p></div>
-* <div ><h3>Big Bay Computer Competition</h3><p><strong>Technical Director</strong></p><p><em>Shenzhen, 2021</em></p></div>
-* <div > <h3>CCPC, China Collegiate Programming Contest</h3> <p><strong>Technical Support</strong></p>  <p><em>Shenzhen, 2019</em></p></div>
+* <div ><strong>ACM-ICPC, International Collegiate Programming Contest</strong><p><strong>Technical Director</strong><br><em>Hong Kong, 2022</em></p></div>
+* <div ><strong>Big Bay Computer Competition</strong><p><strong>Technical Director</strong><br><em>Shenzhen, 2021</em></p></div>
+* <div > <strong>CCPC, China Collegiate Programming Contest</strong> <p><strong>Technical Support</strong><br><em>Shenzhen, 2019</em></p></div>
