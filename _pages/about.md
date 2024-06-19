@@ -28,10 +28,22 @@ Selected Awards
 Publications
 ======
 
+<div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0;">
+    <img src="files/publications/images/2024CVPR_OACNN.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
+      <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Peng_OA-CNNs_Omni-Adaptive_Sparse_CNNs_for_3D_Semantic_Segmentation_CVPR_2024_paper.pdf" style="text-decoration: none;">OA-CNNs: Omni-Adaptive Sparse CNNs for 3D Semantic Segmentation</a><br>
+      <small><strong>Bohao Peng</strong>, Xiaoyang Wu, Li Jiang, Yukang Chen, Hengshuang Zhao, Zhuotao Tian, Jiaya Jia</small><br>
+      <small><em>Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2024</em></small><br>
+      <small>[<a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Peng_OA-CNNs_Omni-Adaptive_Sparse_CNNs_for_3D_Semantic_Segmentation_CVPR_2024_paper.pdf">Paper</a>] [<a href="https://github.com/Pointcept/Pointcept">Code</a>] [<a href="files/publications/bibs/2024CVPR_OACNN.txt">Bib</a>]</small>
+    </p>
+  </div>
+</div>
 
 
-
-<div style="display: flex; align-items: center; margin: 10px;">
+<div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
   <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0;">
     <img src="files/publications/images/2023CVPR_HDMNet.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
