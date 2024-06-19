@@ -13,7 +13,7 @@ Hi! I am Bohao Peng. Thank you for visiting my personal website.
 
 I am a second-year Ph.D student from the Department of Computer Science and Engineering, the Chinese University of Hong Kong (CUHK), supervised by Dr. [Jiaya Jia](https://jiaya.me/home) and Dr. [Ming-Chang Yang](https://www.cse.cuhk.edu.hk/~mcyang/). I obtained my Bachelor of Computer Science from Harbin Institute of Technology, Shenzhen (HITsz), supervised by Dr. [Jingyong Su](https://faculty.hitsz.edu.cn/sujingyong).
 
-Before that, I widely participate in various programming contests, developing a strong interest in traditional algorithms and data structures. I have won gold and silver medals multiple times in contests such as [ICPC](https://icpc.global/) and [CCPC](https://ccpc.io/). And I have contributed to supporting these contests as both the technical director and a volunteer.
+Before that, I widely participate in various programming contests. I have won gold and silver medals multiple times in contests such as [ICPC](https://icpc.global/) and [CCPC](https://ccpc.io/), and contributed to supporting these contests as both the technical director and a volunteer.
 
 My recent research interest is in controllable generation. Additionally, I have worked on several projects involving image segmentation.
 
@@ -143,25 +143,13 @@ Publications
   </div>
 </div>
 
+
 <!-- ------------Others---------------------- -->
 
+<br><br>
 
 Experiences
 ======
-* <div >
-  <h3>ACM-ICPC, International Collegiate Programming Contest</h3>
-  <p><strong>Technical Director</strong></p>
-  <p><em>Hong Kong, 2022</em></p>
-</div>
-
-* <div >
-  <h3>Big Bay Computer Competition</h3>
-  <p><strong>Technical Director</strong></p>
-  <p><em>Shenzhen, 2021</em></p>
-</div>
-
-* <div >
-  <h3>CCPC, China Collegiate Programming Contest</h3>
-  <p><strong>Technical Support</strong></p>
-  <p><em>Shenzhen, 2019</em></p>
-</div>
+* <div ><h3>ACM-ICPC, International Collegiate Programming Contest</h3><p><strong>Technical Director</strong></p><p><em>Hong Kong, 2022</em></p></div>
+* <div ><h3>Big Bay Computer Competition</h3><p><strong>Technical Director</strong></p><p><em>Shenzhen, 2021</em></p></div>
+* <div > <h3>CCPC, China Collegiate Programming Contest</h3> <p><strong>Technical Support</strong></p>  <p><em>Shenzhen, 2019</em></p></div>
