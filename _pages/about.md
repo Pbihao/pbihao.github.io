@@ -28,8 +28,9 @@ Selected Awards
 Publications
 ======
 
+<!-- SLM -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
     <img src="files/publications/images/2024ICLR_SLM.jpg" style="display: block; width: 90%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -42,8 +43,9 @@ Publications
   </div>
 </div>
 
+<!-- PPT -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
     <img src="files/publications/images/2024CVPR_PPT.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -56,8 +58,9 @@ Publications
   </div>
 </div>
 
+<!-- OACNN -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
     <img src="files/publications/images/2024CVPR_OACNN.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -70,9 +73,34 @@ Publications
   </div>
 </div>
 
-
+<!-- GroupContrast -->
 <div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
-  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #eee;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
+        <img src="files/publications/images/2024CVPR_GroupContrast.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
+        <a href="https://arxiv.org/abs/2403.09639" style="text-decoration: none;">GroupContrast: Semantic-aware Self-supervised Representation Learning for 3D Understanding
+      </a><br>
+      <small>
+        Chengyao Wang, Li Jiang, Xiaoyang Wu, Zhuotao Tian, <strong>Bohao Peng</strong>, Hengshuang Zhao, Jiaya Jia
+      </small><br>
+      <small><em>
+        Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2024
+      </em></small><br>
+      <small>
+        [<a href="https://arxiv.org/abs/2403.09639">Paper</a>] 
+        [<a href="https://github.com/dvlab-research/GroupContrast">Code</a>] 
+        [<a href="files/publications/bibs/2024CVPR_GroupContrast.txt">Bib</a>]
+      </small>
+    </p>
+  </div>
+</div>
+
+
+<!-- HDNET -->
+<div style="display: flex; align-items: center; margin: 10px; margin-top: 20px;">
+  <div style="flex: 0 0 30%; margin-right: 20px; font-size: 0; border-radius: 5px; border: 1px solid #ddd;">
     <img src="files/publications/images/2023CVPR_HDMNet.jpg" style="display: block; width: 100%; height: auto; object-fit: cover;" alt="hdnet">
   </div>
   <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
