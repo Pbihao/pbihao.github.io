@@ -31,12 +31,12 @@ Publications
 
 
 
-<div style="display: flex; align-items: center; margin: 10px;">
-  <div style="flex: 0 0 30%; margin-right: 20px;">
-    <img src="files/publications/images/2023CVPR_HDMNet.jpg" style="width: 100%; aspect-ratio: 1.5 / 1; object-fit: cover;" alt="hdnet">
+<div style="display: flex; align-items: flex-start; margin: 10px;">
+  <div style="flex: 0 0 25%; margin-right: 20px;">
+    <img src="files/publications/images/2023CVPR_HDMNet.jpg" style="width: 100%; max-width: 200px; aspect-ratio: 1.5 / 1; object-fit: cover;" alt="hdnet">
   </div>
-  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-    <p style="line-height: 1.0; font-size: 1.1em; margin: 0;">
+  <div style="flex: 1; display: flex; flex-direction: column;">
+    <p style="line-height: 1.5; font-size: 1.1em; margin: 0;">
       <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Peng_Hierarchical_Dense_Correlation_Distillation_for_Few-Shot_Segmentation_CVPR_2023_paper.pdf" style="text-decoration: none;">Hierarchical dense correlation distillation for few-shot segmentation</a><br>
       <small><strong>Bohao Peng</strong>, Zhuotao Tian, Xiaoyang Wu, Chengyao Wang, Shu Liu, Jingyong Su, Jiaya Jia</small><br>
       <small><em>Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2023 <br> <strong><span style="color: red;">Highlight</span></strong> (2.4% acceptance rate)</em></small><br>
