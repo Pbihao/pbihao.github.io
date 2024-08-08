@@ -14,7 +14,7 @@ body {
     line-height: 1.6;
 }
 
-/* 侧边栏样式 */
+/* 侧边栏样式
 .sidebar {
     width: 200px;
     background-color: #ffffff;
@@ -70,7 +70,80 @@ body {
 .sidebar ul li a.active {
     color: #fff;
     background-color: #007acc;
+} */
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid #ddd;
+    transition: transform 0.3s ease; /* 添加动画效果 */
 }
+
+/* 移动设备上的隐藏效果 */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* 移动侧边栏到屏幕外 */
+    }
+
+    .content {
+        margin-left: 0; /* 取消左侧边距 */
+    }
+}
+
+/* 侧边栏标题样式 */
+.sidebar-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #007acc;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 列表样式 */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: color 0.3s, background-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    color: #fff;
+    background-color: #007acc;
+}
+
 
 .content {
     margin-left: 240px;
