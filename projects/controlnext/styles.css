@@ -86,6 +86,17 @@ body {
     justify-content: flex-start;
     border-right: 1px solid #ddd;
     transition: transform 0.3s ease; /* 添加动画效果 */
+    z-index: 1000; /* 确保侧边栏在内容之上 */
+}
+
+/* 内容区域样式 */
+.content {
+    margin-left: 220px; /* 保证内容区域在侧边栏旁边 */
+    padding: 20px;
+    flex: 1;
+    width: calc(100% - 220px); /* 填满剩余宽度 */
+    box-sizing: border-box; /* 包括 padding 在内计算宽度 */
+    transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
 /* 移动设备上的隐藏效果 */
@@ -96,6 +107,7 @@ body {
 
     .content {
         margin-left: 0; /* 取消左侧边距 */
+        width: 100%; /* 填满屏幕宽度 */
     }
 }
 
@@ -144,12 +156,6 @@ body {
     background-color: #007acc;
 }
 
-
-.content {
-    margin-left: 240px;
-    padding: 20px;
-    flex: 1;
-}
 
 .paper-info,
 .paper-citation,
