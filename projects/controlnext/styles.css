@@ -414,7 +414,10 @@ pre {
     opacity: 0.3;
 }
 
-.resolution {
+.resolution,
+.resolution-svd,
+.resolution-sd3,
+.resolution-1-5 {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -426,40 +429,27 @@ pre {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* 为不同类定义不同的背景颜色 */
 .resolution-svd {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     background-color: rgba(87, 51, 15, 0.7);
-    color: #fff;
-    padding: 2px 5px;
-    font-size: 0.9em;
-    border-radius: 3px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .resolution-sd3 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     background-color: rgba(166, 148, 48, 0.7);
-    color: #fff;
-    padding: 2px 5px;
-    font-size: 0.9em;
-    border-radius: 3px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .resolution-1-5 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     background-color: rgba(17, 65, 68, 0.7);
-    color: #fff;
-    padding: 2px 5px;
-    font-size: 0.9em;
-    border-radius: 3px;
-    font-family: 'Montserrat', sans-serif;
+}
+
+/* 在移动设备上隐藏 */
+@media screen and (max-width: 768px) {
+    .resolution,
+    .resolution-svd,
+    .resolution-sd3,
+    .resolution-1-5 {
+        display: none;
+    }
 }
 
 .watermark {
