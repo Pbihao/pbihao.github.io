@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍥</text></svg>">
+    <title>ControlNeXt</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2 class="sidebar-title">ControlNeXt</h2>
+        
+            <ul>
+                <li><a href="#paper-info" class="nav-link"><i class="fas fa-file-alt"></i> Paper Information</a></li>
+                <li><a href="#text-guided" class="nav-link"><i class="fas fa-paint-brush"></i> Overview </a></li>
+                <li><a href="#svd" class="nav-link"><i class="fas fa-video"></i> Video - SVD</a></li>
+                <li><a href="#sdxl" class="nav-link"><i class="fas fa-image"></i> Image - SDXL</a></li>
+                <li><a href="#sd1-5" class="nav-link"><i class="fas fa-image"></i> Image - SD1.5</a></li>
+                <li><a href="#sd3" class="nav-link"><i class="fas fa-image"></i> Image-SR - SD3</a></li>
+                <li><a href="#convergence" class="nav-link"><i class="fas fa-image"></i> Training - SD1.5</a></li>
+                <li><a href="#contact-us" class="nav-link"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        
+    </div>
+    <div class="content">
+        <div id="paper-info" class="paper-info">
+            <h1>ControlNeXt: Powerful and Efficient Control for Image and Video Generation</h1>
+            <div class="authors">
+                <p>
+                    <span class="author"><a href="https://pbihao.github.io" target="_blank">Bohao Peng<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://civitai.com/user/Euge_" target="_blank">Jian Wang<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://julianjuaner.github.io/" target="_blank">Yuechen Zhang<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://fenglinglwb.github.io/" target="_blank">Wenbo Li<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://www.cse.cuhk.edu.hk/~mcyang/" target="_blank">Ming-Chang Yang<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://jiaya.me/" target="_blank">Jiaya Jia<sup># 1,2</sup></a></span>
+                </p>
+                <p>
+                    <span class="affiliation"><sup>1</sup> The Chinese University of Hong Kong</span>, 
+                    <span class="affiliation"><sup>2</sup> SmartMore</span>
+                </p>
+            </div>
+            <div class="links">
+                <p><a href="" target="_blank">Paper (Arxiv)</a></p>
+                <p><a href="https://github.com/dvlab-research/ControlNeXt" target="_blank">GitHub</a></p>
+            </div>
+            <p> # Corresponding author</p>
+           
+        
+        <section id="text-guided" class="gallery-section">
+            <h2>Overview </h2>
+            <p> TL;DR: This work proposes a light-weight controllable module for various base models (SD1.5, SDXL, SD3, SVD) and tasks (image / video generation with various conditions).</p>
+            <p><strong style="color: red;">⚠️ For the webpage transfer, we compress the images and videos to reduce file size. Please refer to the original files for full quality.</strong></p>
+
+            <h3><strong style="color: red;"></strong>Hover on the picture to see the overlayed condition!</strong></h3>
+            <div class="gallery">
+                
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 2 ; grid-column: span 2; grid-row: span 4;">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-e77de85b.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+                <!-- <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 4; grid-row: span 4;">
+                    <img src="eval_img/9/image - 2024-07-26T233201.913_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/9/image - 2024-07-26T233201.913_0.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div> -->
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 4; grid-row: span 4;">
+                    <img src="eval_img/15/86826737_p0_3_conditioning_(1).jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/15/86826737_p0_1.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 2;  grid-column: span 2; grid-row: span 4;">
+                    <img src="examples/canny_1-5_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_1-5_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Canny</div>
+                </div>
+
+                <!-- <div class="gallery-item" style=" --aspect-ratio: 1 / 2;  grid-column: span 2; grid-row: span 4;">
+                    <img src="examples/depth_1-5_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/depth_1-5_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Depth</div>
+                </div> -->
+                
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 2; grid-row: span 4;">
+                    <img src="examples/sr_tiger_origin.jpg" alt="Overlay image" class="overlay-image-sr">
+                    <img src="examples/sr_tiger.jpg" alt=" " class="gallery-image-sr">
+                    <div class="resolution-sd3">SD3 + SR</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="svd" class="gallery-section">
+            <h2>Video Generation via Stable Video Diffusion</h2>
+            <h3>User Input: First frame image & pose guidance sequence</h3>
+            <h3>If you can't load the videos beacause of the network problem, you can also view them through <a href="https://www.bilibili.com/video/BV1wJYbebEE7/?buvid=YC4E03C93B119ADD4080B0958DE73F9DDCAC&from_spmid=dt.dt.video.0&is_story_h5=false&mid=y82Gz7uArS6jTQ6zuqJj3w%3D%3D&p=1&plat_id=114&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=4E5549FC-0710-4030-BD2C-CDED80B46D08&share_source=WEIXIN&share_source=weixin&share_tag=s_i&timestamp=1723123770&unique_k=XLZLhCq&up_id=176095810&vd_source=3791450598e16da25ecc2477fc7983db">BiliBili</a></h3>
+            <div class="gallery-svd" >
+                <div class="gallery-item" style=" --aspect-ratio: 568 / 1024 ; grid-column: span 8; ">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-2547ce1c.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+
+                <p class="gallery-item-none" style="grid-column: span 1; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 568 / 1024 ; grid-column: span 8; ">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-e77de85b.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+                
+                <p class="gallery-item-none" style="grid-column: span 1; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 568 / 1024 ; grid-column: span 8; ">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-10713863.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+
+                <p class="gallery-item-none" style="grid-column: span 26; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 568/1024 ; grid-column: span 8;">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-1c99a25e.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+
+                <p class="gallery-item-none" style="grid-column: span 1; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 568 / 1024 ; grid-column: span 8; ">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-971028ad.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+                
+                <p class="gallery-item-none" style="grid-column: span 1; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 568 / 1024 ; grid-column: span 8; ">
+                    <video class="gallery-video" loop muted autoplay>
+                        <source src="examples/output-f19fd5fc.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="play-pause-btn">▶</button> -->
+                    <div class="resolution-svd">SVD + Pose</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sdxl" class="gallery-section">
+            <h2>Image Generation with SDXL</h2>
+            <h3>We trained a canny adapter on SDXL model.</h3>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 4; grid-row: span 2;">
+                    <img src="examples/canny_house_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_house_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 6; grid-row: span 3;">
+                    <img src="examples/canny_hat_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_hat_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 2;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/11/image---2024-07-28T131432.255_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/11/image---2024-07-28T131432.255_2.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 2;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/11/image---2024-07-28T131432.255_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/11/image---2024-07-28T131432.255_3-(1).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 4; grid-row: span 2;">
+                    <img src="examples/canny_ball_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_ball_gen_2.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 2;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/10/yoneyama_mai_46_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/10/yoneyama_mai_46_0.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+               
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 4; grid-row: span 5;">
+                    <img src="examples/canny_green_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_green_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 4; grid-row: span 2;">
+                    <img src="eval_img/17/97412425_p0_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/17/97412425_p0_0.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 2;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/canny_cyber_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_cyber_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 4; grid-row: span 2;">
+                    <img src="eval_img/15/86826737_p0_3_conditioning_(1).jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/15/86826737_p0_0-(2).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+            </div>
+            <p>Various Stylization & Editing</p>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 4;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/13/danbooru_3508321_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/13/danbooru_3508321_3_conditioning.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">Condition</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 4;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/13/danbooru_3508321_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/13/danbooru_3508321_3-(1).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 4;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/13/danbooru_3508321_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/13/danbooru_3508321_2-(3).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 4;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/13/danbooru_3508321_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/13/danbooru_3508321_0.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 4;  grid-column: span 2; grid-row: span 4;">
+                    <img src="eval_img/13/danbooru_3508321_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/13/danbooru_3508321_2-(1).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+            </div>
+            <p></p>
+            <div class="gallery-12"> 
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 4; grid-row: span 2;">
+                    <img src="eval_img/14/reiko_55_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/14/reiko_55_3_conditioning.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">Condition</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;     grid-column: span 4; grid-row: span 2;">
+                    <img src="eval_img/14/reiko_55_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/14/reiko_55_0.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 1;  grid-column: span 4; grid-row: span 2;">
+                    <img src="eval_img/14/reiko_55_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/14/reiko_55_2.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <!-- <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 4; grid-row: span 2;">
+                    <img src="eval_img/14/reiko_55_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/14/reiko_55_1.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div> -->
+            </div>
+            <p></p>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 2; grid-row: span 2;">
+                    <img src="eval_img/19/danbooru_3759992_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/19/danbooru_3759992_3_conditioning.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">Condition</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;   grid-column: span 2; grid-row: span 2;">
+                    <img src="eval_img/19/danbooru_3759992_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/19/danbooru_3759992_1-(2).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 2; grid-row: span 2;">
+                    <img src="eval_img/19/danbooru_3759992_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/19/danbooru_3759992_1-(3).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;   grid-column: span 2; grid-row: span 2;">
+                    <img src="eval_img/19/danbooru_3759992_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/19/danbooru_3759992_0-(1).jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 2; grid-row: span 2;">
+                    <img src="eval_img/19/danbooru_3759992_3_conditioning.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="eval_img/19/danbooru_3759992_1.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+            </div>
+            <p></p>
+            <div class="gallery-12"> 
+                
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_source.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">Source Image</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_1.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_2.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_3.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_cond.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">Condition</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_6.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_4.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 3 / 2;  grid-column: span 3; grid-row: span 2;">
+                    <img src="examples/canny_test_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_test_5.jpg" alt=" " class="gallery-image">
+                    <div class="resolution">SDXL + Canny</div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="sd1-5" class="gallery-section">
+            <h2>Image Generation with 1.5</h2>
+            
+            
+            <h3>Our method is also adaptable for community's LoRA weights</h3>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/lora_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/lora_cond.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">Pose Condition</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/lora_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/lora_1.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Warrior</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/lora_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/lora_2.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Genshin</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/lora_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/lora_3.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Chinese Painting
+                    </div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/lora_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/lora_4.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Animation</div>
+                </div>
+            </div>
+
+            <h3>We trained a multiple adapters on SD1.5 model.</h3>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/pose_1-5_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/pose_1-5_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Pose + LoRA</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/pose_1-5_cond_2.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/pose_1-5_gen_2.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Pose</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/canny_1-5_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/canny_1-5_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Canny</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/mask_1-5_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/mask_1-5_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Mask</div>
+                </div>
+
+                <div class="gallery-item" style=" --aspect-ratio: 2 / 3;  grid-column: span 2; grid-row: span 3;">
+                    <img src="examples/depth_1-5_cond.jpg" alt="Overlay image" class="overlay-image">
+                    <img src="examples/depth_1-5_gen.jpg" alt=" " class="gallery-image">
+                    <div class="resolution-1-5">SD1.5 + Depth</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="sd3" class="gallery-section">
+            <h2>Image Super-Resolution with SD3</h2>
+            <h3>We trained a Super-Resolution ControlNeXt on SD3 with degraded inputs.</h3>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 5;">
+                    <img src="examples/sr_01_lr.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">SD3 + LR</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 5;">
+                    <img src="examples/sr_01_hr.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">SD3 + SR</div>
+                </div>
+
+                <p class="gallery-item-none" style="grid-column: span 10; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 5;">
+                    <img src="examples/sr_02_lr.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">SD3 + LR</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 5;">
+                    <img src="examples/sr_02_hr.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">SD3 + SR</div>
+                </div>
+
+                <p class="gallery-item-none" style="grid-column: span 10; "></p>
+
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 5;">
+                    <img src="examples/sr_03_lr.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">SD3 + LR</div>
+                </div>
+                <div class="gallery-item" style=" --aspect-ratio: 1 / 1;  grid-column: span 5;">
+                    <img src="examples/sr_03_hr.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">SD3 + SR</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="convergence" class="gallery-section">
+            <h2>Training convergence</h2>
+            <h3>Our method achieves significantly faster convergence during training.</h3>
+            <h3>It starts to learn the control abilities within hundreds of training steps.</h3>
+            <div class="gallery">
+                <div class="gallery-item" style=" --aspect-ratio: 3368 / 1970; grid-column: span 10;">
+                    <img src="figs/training_convergence.jpg" alt=" " class="gallery-image-pure">
+                    <div class="resolution-1-5">Training of SD1.5</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-us" class="contact-us">
+            <h2>Contact Us</h2>
+            <p>
+                Feel free to contact Bohao Peng at <a href="mailto:bhpeng22@cse.cuhk.edu.hk" target="_blank">bhpeng22@cse.cuhk.edu.hk</a> for any question，cooperation, and communication.
+            </p>
+            <!-- add a bibtex -->
+            <p>
+                If you find this work useful, please consider citing:
+            </p>
+            <!-- align left, use a rounded gray box to bound it.-->
+            <div class="citation-container">
+                <div class="citation-box">
+                    <pre>@article{peng2024controlnext,
+    title={ControlNeXt: Powerful and Efficient Control for Image and Video Generation},
+    author={Peng, Bohao and Wang, Jian and Zhang, Yuechen and Li, Wenbo and Yang, Ming-Chang and Jia, Jiaya},
+    journal={arXiv preprint},
+    year={2024}
+}</pre>
+                </div>
+            </div>
+        </section>
+        
+
+    </div>
+
+   <!-- Modal for image enlargement -->
+<!-- Modal for image enlargement -->
+    <!-- Modal for image enlargement -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content-container">
+        <div class="modal-content" id="modal-img"></div>
+    </div>
+    <div id="caption"></div>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+      
+    <div id="resolution" class="resolution"></div>
+    <div class="thumbnails">
+        <!-- Thumbnails will be generated dynamically by JavaScript -->
+    </div>
+</div>
+
+    
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
