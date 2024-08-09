@@ -273,7 +273,7 @@ pre {
     gap: 3px;
     font-family: 'Montserrat', sans-serif;
     max-width: 1440px;
-    margin-bottom: 20px;
+    margin: 0 auto;
 }
 .gallery-12 {
     display: grid;
