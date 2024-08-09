@@ -97,6 +97,10 @@ body {
     width: calc(100% - 220px); /* 填满剩余宽度 */
     box-sizing: border-box; /* 包括 padding 在内计算宽度 */
     transition: margin-left 0.3s ease, width 0.3s ease;
+
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    text-align: center; /* 如果有文本内容，使文本也居中 */
 }
 
 /* 移动设备上的隐藏效果 */
