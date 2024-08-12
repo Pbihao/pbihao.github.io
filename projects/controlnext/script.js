@@ -185,13 +185,14 @@ window.addEventListener('scroll', () => {
 
 
 function isMobileDevice() {
-    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return /Mobi|Android|iPhone|iPad|iPod|MicroMessenger|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+
 
 function dismissWarning() {
     document.getElementById('mobile-warning').style.display = 'none';
 }
 
-if (isMobileDevice()) {
+if (isMobileDevice() ) {
     document.getElementById('mobile-warning').style.display = 'block';
-}
+}S
