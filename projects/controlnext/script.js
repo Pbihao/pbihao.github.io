@@ -185,7 +185,16 @@ window.addEventListener('scroll', () => {
 
 
 function isMobileDevice() {
-    return /Mobi|Android|iPhone|iPad|iPod|MicroMessenger|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function isWeChat() {
+    var ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true
+    } else{
+        return false
+    }
 }
 
 
@@ -193,6 +202,6 @@ function dismissWarning() {
     document.getElementById('mobile-warning').style.display = 'none';
 }
 
-if (isMobileDevice() ) {
+if (isMobileDevice() || isWeChat()) {
     document.getElementById('mobile-warning').style.display = 'block';
 }S
