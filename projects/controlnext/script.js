@@ -181,3 +181,17 @@ window.addEventListener('scroll', () => {
         updateThumbnails();
     }
 });
+
+
+
+function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function dismissWarning() {
+    document.getElementById('mobile-warning').style.display = 'none';
+}
+
+if (isMobileDevice()) {
+    document.getElementById('mobile-warning').style.display = 'block';
+}
