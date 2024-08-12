@@ -358,8 +358,8 @@ pre {
 .gallery-image-sr {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -40%;
+    width: 140%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
@@ -380,8 +380,8 @@ pre {
 .overlay-image-sr {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -40%;
+    width: 140%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
