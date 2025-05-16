@@ -15,7 +15,9 @@ I am a second-year Ph.D student from the Department of Computer Science and Engi
 
 Before that, I widely participate in various programming contests, such as [ICPC](https://icpc.global/) and [CCPC](https://ccpc.io/), and contributed to supporting these contests as both the technical director and a volunteer.
 
-My recent research interest is in controllable generation. Additionally, I have worked on several projects involving image segmentation.
+My recent research interest is in controllable generation, large language model (LLM) and VLM. Additionally, I have worked on several projects involving image perception.
+
+More information in my [CV](https://pbihao.github.io/files/BohaoPENG_CV.pdf).
 
 
 Selected Awards
