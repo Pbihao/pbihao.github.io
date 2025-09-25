@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍥</text></svg>">
+    <title>DreamOmni2</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="mobile-warning">
+        For the best experience, it's better to use a desktop computer to view this website.
+        <br>
+        <button onclick="dismissWarning()">Continue</button>
+    </div>
+    
+    <div class="sidebar">
+        <h2 class="sidebar-title">DreamOmni2</h2>
+        
+            <ul>
+                <li><a href="#paper-info" class="nav-link"><i class="fas fa-file-alt"></i> Paper Infor</a></li>
+                <li><a href="#object-replace" class="nav-link"><i class="fas fa-exchange-alt"></i> Object Replace</a></li>
+                <li><a href="#light-render" class="nav-link"><i class="fas fa-lightbulb"></i> Light Render</a></li>
+                <li><a href="#style-transfer" class="nav-link"><i class="fas fa-palette"></i> Style Transfer</a></li>
+                <li><a href="#pose-imitation" class="nav-link"><i class="fas fa-running"></i> Pose Imitation</a></li>
+                <li><a href="#face-expression" class="nav-link"><i class="fas fa-smile"></i> Face Expression</a></li>
+                <li><a href="#hair-style" class="nav-link"><i class="fas fa-cut"></i> Hair Style</a></li>
+                <li><a href="#fontforlable" class="nav-link"><i class="fas fa-font"></i> Font</a></li>
+                <li><a href="#patternforlable" class="nav-link"><i class="fas fa-shapes"></i> Pattern</a></li>
+                <li><a href="#background" class="nav-link"><i class="fas fa-image"></i> Background</a></li>
+                <li><a href="#incontext" class="nav-link"><i class="fas fa-layer-group"></i> In-context</a></li>
+                <li><a href="#threeref" class="nav-link"><i class="fas fa-clone"></i> Three Refer</a></li>
+                <li><a href="#fourref" class="nav-link"><i class="fas fa-copy"></i> Four Refer</a></li>
+                <li><a href="#oneref" class="nav-link"><i class="fas fa-file"></i> More Examples </a></li>
+                <li><a href="#compare" class="nav-link"><i class="fas fa-balance-scale"></i> Comparisons </a></li>
+                <li><a href="#contact-us" class="nav-link"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                
+
+                <li style="margin: 100px;"> </li>
+            </ul>
+        
+    </div>
+    <div class="content">
+        <div id="paper-info" class="paper-info">
+            <h1>DreamOmni2: Multimodal Instraction-Based Editing And Generation</h1>
+            <div class="authors">
+                <p>
+                    <span class="author"><a href="https://scholar.google.com/citations?user=rh2fID8AAAAJ&hl=zh-CN" target="_blank">Bin Xia<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://pbihao.github.io/" target="_blank">Bohao PENG<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://julianjuaner.github.io/" target="_blank">Yuechen Zhang<sup>1</sup></a></span>, 
+                    <span class="author">Junjia Huang<sup>3</sup></span>, 
+                    <span class="author">Jiyang Liu<sup>3</sup></span>, 
+                    <span class="author"><a href="https://scholar.google.com/citations?user=mqrKmvcAAAAJ&hl=en" target="_blank">Jingyao Li<sup>1</sup></a></span>, 
+                    <span class="author">Haoru Tan</span>, 
+                    <span class="author"><a href="https://openreview.net/profile?id=~Sitong_Wu1" target="_blank">Sitong Wu<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://wcy1122.github.io/" target="_blank">Chengyao Wang<sup>1</sup></a></span>, 
+                    <span class="author">Yitong Wang<sup>3</sup></span>, 
+                    <span class="author">Xinglong Wu<sup>3</sup></span>, 
+                    <span class="author"><a href="https://scholar.google.com/citations?user=tGneTm4AAAAJ&hl=en" target="_blank"> Bei Yu<sup>1</sup></a></span>, 
+                    <span class="author"><a href="https://jiaya.me/" target="_blank">Jiaya Jia<sup>1,2</sup></a></span>
+                </p>
+                <p>
+                    <span class="affiliation"><sup>1</sup> The Chinese University of Hong Kong</span>,  
+                    <span class="affiliation"><sup>2</sup> The Hong Kong University of Science and Technology</span>, 
+                    <span class="affiliation"><sup>3</sup> Bytedance </span>
+                </p>
+            </div>
+            <div class="links">
+                <p><i class="fas fa-file-pdf" style="font-size: 25px; margin-right: 5px;"></i><a href="https://arxiv.org/abs/2408.06070" target="_blank">Paper</a></p>
+                <p><i class="fab fa-github" style="font-size: 25px; margin-right: 5px;"></i><a href="https://github.com/dvlab-research/ControlNeXt" target="_blank">GitHub</a></p>
+                <p><i class="fas fa-desktop" style="font-size: 25px; margin-right: 5px;"></i><a href="https://huggingface.co/spaces/Eugeoter/ControlNeXt" target="_blank">Demo</a></p>
+            </div>
+           
+        
+        <section class="gallery-section">
+            <!-- ============================================================================================================ -->
+            <h2 id="object-replace"> Object Replace </h2>        <!-- Object Replace --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 4;">
+                    <div class="gallery-item" style="flex: 3;">
+                        <img src="multi_2_ref/1/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 2;">
+                        <img src="multi_2_ref/1/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 8;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the lantern in the first image with the dog in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/1/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style="grid-column: span 4;">
+                    <div class="gallery-item" style="flex: 3;">
+                        <img src="multi_2_ref/2/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3;">
+                        <img src="multi_2_ref/2/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 8;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the man in the first image with the woman in the second image.
+                        </div>
+                    </div>
+                    <img src="multi_2_ref/2/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- *********************************************************************************************************** -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; ">
+                    <img src="multi_2_ref/3/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; ">
+                    <img src="multi_2_ref/3/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; ">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the suit in the first image with the clothes in the second image.
+</div>
+                    </div>
+                    <img src="multi_2_ref/3/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; ">
+                    <img src="multi_2_ref/4/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; ">
+                    <img src="multi_2_ref/4/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; ">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the person in the first image with the person in the second image.
+</div>
+                    </div>
+                    <img src="multi_2_ref/4/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="light-render"> Lighting Render </h2>        <!-- Lighting Render --> 
+            <!-- *********************************************************************************************************** -->
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/5/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/5/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the first image has the same light condition as the second image.
+</div>
+                    </div>
+                    <img src="multi_2_ref/5/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/6/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/6/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the first image has the same light condition as the second image.
+</div>
+                    </div>
+                    <img src="multi_2_ref/6/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- *********************************************************************************************************** -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/7/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/7/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the first image has the same light condition as the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/7/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/8/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/8/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the first image has the same light condition as the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/8/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+
+            <!-- ============================================================================================================ -->
+            <h2 id="style-transfer"> Style Transfer </h2>        <!-- Style Transfer --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 5;">
+                    <div class="gallery-item" style="flex: 3;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/9/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/9/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 7;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the first image have the same image style as the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/9/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 5;">
+                    <div class="gallery-item" style="flex: 3;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/10/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/10/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 7;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the first image have the same image style as the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/10/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- *********************************************************************************************************** -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/11/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/11/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the first image have the same image style as the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/11/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/12/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/12/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Replace the first image have the same image style as the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/12/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="pose-imitation"> Pose Imitation </h2>        <!-- Pose Imitation --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/13/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/13/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person from the first image has the same pose as person from the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/13/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/14/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/14/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person from the first image has the same pose as person from the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/14/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+             <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/15/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/15/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person from the first image has the same pose as person from the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/15/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/16/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/16/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person from the first image has the same pose as person from the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/16/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+           
+            <!-- ============================================================================================================ -->
+            <h2 id="face-expression"> Face Expression </h2>        <!-- Face Expression --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/17/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/17/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person in the first image have the same expression as the person in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/17/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/18/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/18/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person in the first image have the same expression as the person in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/18/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/19/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/19/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person in the first image have the same expression as the person in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/19/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/20/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/20/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person in the first image have the same expression as the person in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/20/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="hair-style"> Hair Style </h2>        <!-- Hair Style --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/21/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/21/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person in the first image have the same hairstyle as the person in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/21/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6; ">
+                    <img src="multi_2_ref/22/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <img src="multi_2_ref/22/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 6; grid-column: span 4; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the person in the first image have the same hairstyle as the person in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/22/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="fontforlable"> Font Imitation </h2>        <!-- Font Imitation --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 6;">
+                    <div class="gallery-item" style="flex: 3;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/23/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/23/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the words in the first image have the same font as the words in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/23/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 6;">
+                    <div class="gallery-item" style="flex: 3;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/24/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/24/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the words in the first image have the same font as the words in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/24/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 3; grid-column: span 4; grid-row: span 3; ">
+                    <img src="multi_2_ref/25/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 3; grid-column: span 4; grid-row: span 3;">
+                    <img src="multi_2_ref/25/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 3; grid-column: span 4; grid-row: span 3;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the words in the first image have the same font as the words in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/25/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 3; grid-column: span 4; grid-row: span 3; ">
+                    <img src="multi_2_ref/26/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 3; grid-column: span 4; grid-row: span 3;">
+                    <img src="multi_2_ref/26/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 3; grid-column: span 4; grid-row: span 3;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the words in the first image have the same font as the words in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/26/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="patternforlable"> Pattern Imitation </h2>        <!-- Pattern Imitation --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 5;">
+                    <div class="gallery-item" style="flex: 4;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/27/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 2; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/27/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the bag in the first image have the same pattern as the machine in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/27/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 5;">
+                    <div class="gallery-item" style="flex: 3;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/28/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/28/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 8 / 6; grid-column: span 8;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the car in the first image have the same pattern as the mouse in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/28/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 4; grid-column: span 4; grid-row: span 4; ">
+                    <img src="multi_2_ref/29/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 4; grid-column: span 4; grid-row: span 4;">
+                    <img src="multi_2_ref/29/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 4; grid-column: span 4; grid-row: span 4;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the tape in the first image have the same pattern as the bag in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/29/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 4; grid-column: span 4; grid-row: span 4; ">
+                    <img src="multi_2_ref/30/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 4; grid-column: span 4; grid-row: span 4;">
+                    <img src="multi_2_ref/30/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 4; grid-column: span 4; grid-row: span 4;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the bottle in the first image have the same pattern as the compass in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/30/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/31/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/31/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the dress in the first image have the same pattern in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/31/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/32/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/32/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the  T-shirt in the first image have the same pattern in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/32/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="background"> Background Replace </h2>        <!-- Background Replace --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 6;">
+                    <div class="gallery-item" style="flex: 5;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/33/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 6; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/33/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 1 / 1; grid-column: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the bag in the first image have the same pattern as the machine in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/33/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*2 || 1*1 -->
+                <div class="gallery-item-container" style=" grid-column: span 6;">
+                    <div class="gallery-item" style="flex: 3;--aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/34/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 3; --aspect-ratio: 2 / 1;">
+                        <img src="multi_2_ref/34/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 8 / 6; grid-column: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the car in the first image have the same pattern as the mouse in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/34/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/35/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/35/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the dress in the first image have the same pattern in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/35/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/36/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/36/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Make the  T-shirt in the first image have the same pattern in the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/36/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="incontext"> In-context Generation </h2>        <!-- In-context Generation --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/37/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/37/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The character from the first image is holding the item from the second picture.</div>
+                    </div>
+                    <img src="multi_2_ref/37/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/38/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/38/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The character from the second image is holding the item from the first image.</div>
+                    </div>
+                    <img src="multi_2_ref/38/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/39/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/39/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The logo from the first image is printed on the object from the second image.</div>
+                    </div>
+                    <img src="multi_2_ref/39/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1*1 || 1*1 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/40/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <img src="multi_2_ref/40/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                    <div class="resolution">Image 2</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The man from the first image is wearing the clothes from the second image and is sitting on a sofa.</div>
+                    </div>
+                    <img src="multi_2_ref/40/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="threeref"> Three References Generation </h2>        <!-- Three References Generation --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 1*1 || 1*2 || 1*1 -->
+                <div class="gallery-item" style="--aspect-ratio: 3 / 5; grid-column: span 3; grid-row: span 5; ">
+                    <img src="multi_2_ref/41/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item-container" style=" grid-column: span 4; grid-row: span 5;">
+                    <div class="gallery-item" style="flex: 4;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/41/ref_1.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 6; --aspect-ratio: 4 / 3;">
+                        <img src="multi_2_ref/41/ref_2.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 3</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 5 / 5; grid-column: span 5; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The parrot from Image 1 is wearing the hat from Image 2 and standing on the ground, with a forest in the background. The color tone of the image is the same as in Image 3.</div>
+                    </div>
+                    <img src="multi_2_ref/41/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 2 || 1 || 1 -->
+                <div class="gallery-item-container" style=" grid-column: span 3; grid-row: span 5;">
+                    <div class="gallery-item" style="flex: 6;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/42/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 6; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/42/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 5 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/42/ref_2.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 3</div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 6 / 5; grid-column: span 5; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The cat from Image 1 and the dog from Image 2 are sitting side by side, with the background inside a car. The style of the image is the same as in Image 3.</div>
+                    </div>
+                    <img src="multi_2_ref/42/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+            <!-- ************************************************************************************************************ -->
+            <div style="margin: 8px;"></div>
+            <div class="gallery">
+                <!-- 1 || 2 || 1 -->
+                <div class="gallery-item" style="--aspect-ratio: 4 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/43/ref_1.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item-container" style=" grid-column: span 3; grid-row: span 5;">
+                    <div class="gallery-item" style="flex: 5;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/43/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/43/ref_2.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 3</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 5 / 5; grid-column: span 5; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">On a fighting stage, two people are engaged in combat. Their movements are shown in Figure 3.</div>
+                    </div>
+                    <img src="multi_2_ref/43/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 1 || 2 || 1 -->
+                <div class="gallery-item" style="--aspect-ratio: 5 / 5; grid-column: span 4; grid-row: span 5; ">
+                    <img src="multi_2_ref/44/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                    <div class="resolution">Image 1</div>
+                </div>
+                <div class="gallery-item-container" style=" grid-column: span 3; grid-row: span 5;">
+                    <div class="gallery-item" style="flex: 6;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/44/ref_1.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 6; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/44/ref_2.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 3</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 6 / 5; grid-column: span 5; grid-row: span 5;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">Picture 1 is hung on the wall of a bedroom. The cup in Picture 2, made of the same material as the plate in Picture 3, is placed on the table.</div>
+                    </div>
+                    <img src="multi_2_ref/44/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+
+            <!-- ============================================================================================================ -->
+            <h2 id="fourref"> Four References Generation </h2>        <!-- Four References Generation --> 
+            <!-- ************************************************************************************************************ -->
+            <div class="gallery">
+                <!-- 2 || 2 || 1 -->
+                <div class="gallery-item-container" style=" grid-column: span 3; grid-row: span 6;">
+                    <div class="gallery-item" style="flex: 6;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/45/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/45/ref_2.jpg" alt="Reference 2" class="gallery-image-pure">
+                        <div class="resolution">Image 3</div>
+                    </div>
+                </div>
+                <div class="gallery-item-container" style=" grid-column: span 4; grid-row: span 6;">
+                    <div class="gallery-item" style="flex: 6;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/45/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/45/ref_3.jpg" alt="Reference 3" class="gallery-image-pure">
+                        <div class="resolution">Image 4</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 5 / 6; grid-column: span 5; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The man from Image 1 stands next to the woman from Image 2. The woman is wearing the hat from Image 4, which has the logo from Image 3 on it. The background is by the lake.</div>
+                    </div>
+                    <img src="multi_2_ref/45/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+                <!-- 2 || 2 || 1 -->
+                <div class="gallery-item-container" style=" grid-column: span 4; grid-row: span 6;">
+                    <div class="gallery-item" style="flex: 6;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/46/ref_0.jpg" alt="Reference 0" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/46/ref_2.jpg" alt="Reference 2" class="gallery-image-pure">
+                        <div class="resolution">Image 3</div>
+                    </div>
+                </div>
+                <div class="gallery-item-container" style=" grid-column: span 3; grid-row: span 6;">
+                    <div class="gallery-item" style="flex: 6;--aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/46/ref_1.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 4 / 2;">
+                        <img src="multi_2_ref/46/ref_3.jpg" alt="Reference 3" class="gallery-image-pure">
+                        <div class="resolution">Image 4</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 5 / 6; grid-column: span 5; grid-row: span 6;">
+                    <div class="prompt-text">
+                        <div class="prompt-text-inner">The woman from image 1 and the man from image 2 are standing in front of a mountain. The dog from image 3 is standing between them. The style of the image is the same as in image 4.</div>
+                    </div>
+                    <img src="multi_2_ref/46/res.jpg" alt="Result" class="gallery-image">
+                    <div class="resolution">Result</div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="oneref" > More Examples </h2>        <!-- One Refer --> 
+            <!-- ************************************************************************************************************ -->
+            <button class="slider-btn left-btn" style="margin-top: -15px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button class="slider-btn right-btn" style="margin-top: -15px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+            <div class="slider-container" >
+                <div class="slider">
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 4;">
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\1\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            A spaceship is flying in the sky, with the sun visible in the background. The style of the image is the same as in Image 1.
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\1\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 4;">
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\2\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            A girl wearing a pink skirt and a white long-sleeve shirt, with long golden hair. She strikes the same pose as the man in the given image. The background is a field of flowers.
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\2\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 5;">
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\3\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            Generate a helicopter soaring above a city skyline at dusk. The color scheme of the helicopter is the same as that of the motorcycle.
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\3\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 5;">
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\8\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            A vibrant hot air balloon soaring over a sprawling valley. The color tone of the image is the same as in Image 1.
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\8\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 5;">
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\4\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            A woman in a cozy sweater and jeans, walking through a park during autumn. She has the same hair as the one in the given image and is holding a coffee cup in one hand, with the other hand tucked into her pocket. The background features golden fall leaves scattered on the ground, with trees in shades of red and orange, and a peaceful walking path stretching ahead.
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\4\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 5;">
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\5\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            A woman in a cozy knitted sweater and denim jeans, sitting by a fireplace, sipping tea while reading a book. Her hair is styled in loose waves, and she has a calm, content expression. Her makeup is the same as the woman in the given image. 
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 5 / 4; ">
+                            <img src="more_1_ref\5\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 4;">
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\6\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            Generate a bottle placed on a wooden kitchen counter. Its texture matches the given image. The bottle is surrounded by fresh fruit, a small bowl of herbs, and a cup of steaming tea. 
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\6\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                    <!-- Group -->
+                    <div class="group-item" style="--span: 4;">
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\7\ref_0.jpg" alt="Reference" class="gallery-image-pure">
+                            <div class="resolution">Image 1</div>
+                        </div>
+                        <div class="prompt-display">
+                            On the cup, "Story" is displayed in the same font style as the reference image. 
+                        </div>
+                        <div class="gallery-item" style="--aspect-ratio: 4 / 4; ">
+                            <img src="more_1_ref\7\result.jpg" alt="Result" class="gallery-image-pure">
+                            <div class="resolution">Result</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================ -->
+            <h2 id="compare" > Compare with the Alternatives </h2>        <!-- Compare with the Alternatives --> 
+            <!-- Name -->
+            <div class="gallery" style="margin-top: -20px; margin-bottom: -10px;">
+                <div  style="grid-column: span 6; margin-right: 20px;">
+                    <h3>Inputs</h3>
+                </div>
+                <div  style="grid-column: span 3; ">
+                    <h3 style="color: rgb(168, 2, 2);">Ours</h3>
+                </div>
+                <div  style="grid-column: span 3; ">
+                    <h3>Kontext</h3>
+                </div>
+                <div  style="grid-column: span 3; ">
+                    <h3>Qwen-Edit</h3>
+                </div>
+                <div  style="grid-column: span 3; ">
+                    <h3>GPT-4o</h3>
+                </div>
+                <div  style="grid-column: span 3; ">
+                    <h3>Nano-Banana</h3>
+                </div>
+                <div  style="grid-column: span 3; ">
+                    <h3>OmniGen2</h3>
+                </div>
+            </div>
+            <!-- Compare Row -->
+            <div class="gallery">
+                <div class="gallery-item-container" style=" flex-direction:row; grid-column: span 6; grid-row: span 4; margin-right: 20px;">
+                    <div class="gallery-item" style="flex: 4;--aspect-ratio: 3 / 4;">
+                        <img src="compare\1\inp_0.jpg" alt="Reference 1" class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 3 / 4;">
+                        <img src="compare\1\inp_1.jpg" alt="Reference 2" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\1\ours.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\1\kontext.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\1\qwen.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\1\gpt4o.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\1\Nanobanana.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\1\omnigen.jpg" class="gallery-image-pure">
+                </div>
+            </div>
+            <div class="gallery">
+                <div  style="grid-column: span 24; margin-top: 5px; margin-bottom: 5px; font-size: 1.2em;">
+                    Make the person from the first image has the same pose as person from the second image.
+                </div>
+            </div>
+            <!-- Compare Row -->
+            <div class="gallery">
+                <div class="gallery-item-container" style=" flex-direction:row; grid-column: span 6; grid-row: span 4; margin-right: 20px;">
+                    <div class="gallery-item" style="flex: 4;--aspect-ratio: 3 / 4;">
+                        <img src="compare\2\inp_0.jpg"  class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 3 / 4;">
+                        <img src="compare\2\inp_1.jpg" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\2\ours.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\2\kontext.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\2\qwen.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\2\gpt4o.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\2\Nanobanana.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\2\omnigen.jpg" class="gallery-image-pure">
+                </div>
+            </div>
+            <div class="gallery">
+                <div  style="grid-column: span 24; margin-top: 5px; margin-bottom: 5px; font-size: 1.2em;">
+                    Make the person in the first image have the same hairstyle as the person in the second image.
+                </div>
+            </div>
+            <!-- Compare Row -->
+            <div class="gallery">
+                <div class="gallery-item-container" style=" flex-direction:row; grid-column: span 6; grid-row: span 4; margin-right: 20px;">
+                    <div class="gallery-item" style="flex: 4;--aspect-ratio: 3 / 4;">
+                        <img src="compare\3\inp_0.jpg"  class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 3 / 4;">
+                        <img src="compare\3\inp_1.jpg" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\3\ours.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\3\kontext.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\3\qwen.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\3\gpt4o.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\3\Nanobanana.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 4; grid-column: span 3; grid-row: span 4; ">
+                    <img src="compare\3\omnigen.jpg" class="gallery-image-pure">
+                </div>
+            </div>
+            <div class="gallery">
+                <div  style="grid-column: span 24; margin-top: 5px; margin-bottom: 5px; font-size: 1.2em;">
+                    Make the first image has the same light condition as the second image.
+                </div>
+            </div>  
+            <!-- Compare Row -->
+            <div class="gallery">
+                <div class="gallery-item-container" style=" flex-direction:row; grid-column: span 6; grid-row: span 2; margin-right: 20px;">
+                    <div class="gallery-item" style="flex: 4;--aspect-ratio: 3 / 2;">
+                        <img src="compare\4\inp_0.jpg"  class="gallery-image-pure">
+                        <div class="resolution">Image 1</div>
+                    </div>
+                    <div class="gallery-item" style="flex: 4; --aspect-ratio: 3 / 2;">
+                        <img src="compare\4\inp_1.jpg" class="gallery-image-pure">
+                        <div class="resolution">Image 2</div>
+                    </div>
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 2; grid-column: span 3; grid-row: span 2; ">
+                    <img src="compare\4\ours.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 2; grid-column: span 3; grid-row: span 2; ">
+                    <img src="compare\4\kontext.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 2; grid-column: span 3; grid-row: span 2; ">
+                    <img src="compare\4\qwen.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 2; grid-column: span 3; grid-row: span 2; ">
+                    <img src="compare\4\gpt4o.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 2; grid-column: span 3; grid-row: span 2; ">
+                    <img src="compare\4\Nanobanana.jpg" class="gallery-image-pure">
+                </div>
+                <div class="gallery-item" style="--aspect-ratio: 3 / 2; grid-column: span 3; grid-row: span 2; ">
+                    <img src="compare\4\omnigen.jpg" class="gallery-image-pure">
+                </div>
+            </div>
+            <div class="gallery">
+                <div  style="grid-column: span 24; margin-top: 5px; margin-bottom: 5px; font-size: 1.2em;">
+                    Make the words in the first image have the same font as the words in the second image.
+                </div>
+            </div>  
+        </section>
+
+
+
+
+        <section id="contact-us" class="contact-us">
+            <h2>Contact Us</h2>
+            <p>
+                Feel free to contact Bin Xia at <a href="zjbinxia@gmail.com" target="_blank">zjbinxia@gmail.com</a> for any question,cooperation, and communication.
+            </p>
+            <!-- add a bibtex -->
+            <p>
+                If you find this work useful, please consider citing:
+            </p>
+            <!-- align left, use a rounded gray box to bound it.-->
+            <div class="citation-container">
+                <div class="citation-box">
+                    <pre>@article{Xia2025,
+    author = {Bin Xia, Bohao Peng, Yuechen Zhang, Junjia Huang, Jiyang Liu, Jingyao Li, Haoru Tan, Sitong Wu, Chengyao Wang, Yitong Wang, Xinglong Wu, Bei Yu, Jiaya Jia},
+    title = {DreamOmni2: Multimodal Instruction-Based Editing and Generation},
+    year = {2025},
+}</pre>
+                </div>
+            </div>
+        </section>
+        
+
+    </div>
+
+   <!-- Modal for image enlargement -->
+<!-- Modal for image enlargement -->
+    <!-- Modal for image enlargement -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content-container">
+        <div class="modal-content" id="modal-img"></div>
+    </div>
+    <div id="caption"></div>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+      
+    <div id="resolution" class="resolution"></div>
+    <div class="thumbnails">
+        <!-- Thumbnails will be generated dynamically by JavaScript -->
+    </div>
+</div>
+
+    
+    
+
+    <script src="./script.js"></script>
+    <script>
+                const sliderContainer = document.querySelector('.slider-container');
+                const slider = document.querySelector('.slider');
+                const leftBtn = document.querySelector('.left-btn');
+                const rightBtn = document.querySelector('.right-btn');
+
+                leftBtn.addEventListener('click', () => {
+                    sliderContainer.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+
+                rightBtn.addEventListener('click', () => {
+                    sliderContainer.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+    </script>
+</body>
+</html>
